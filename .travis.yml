@@ -9,5 +9,4 @@ after_script:
   - git config user.email "1043609130@qq.com"
   - git add -A
   - git commit -m "updated"
-  -git push --force "https://{GH_TOKEN}@git@${GH_REF}" "main:gh_pages"
-
+  - git push --force "https://{GH_TOKEN}@git@${GH_REF}" "main:gh_pages"
