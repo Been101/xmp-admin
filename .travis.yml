@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "14"
+install: npm install
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "been"
+  - git config user.email "1043609130@qq.com"
+  - git add -A
+  - git commit -m "updated"
+  -git push --force "https://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@git@github.com:Been101/xmp-admin.git" "master:gh_pages"
+branches:
+  only:
+    - master
