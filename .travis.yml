@@ -9,7 +9,5 @@ after_script:
   - git config user.email "1043609130@qq.com"
   - git add -A
   - git commit -m "updated"
-  -git push --force "https://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@git@github.com:Been101/xmp-admin.git" "master:gh_pages"
-branches:
-  only:
-    - master
+  -git push --force "https://{GH_TOKEN}@git@${GH_REF}" "main:gh_pages"
+
