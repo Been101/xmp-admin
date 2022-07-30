@@ -1,12 +1,17 @@
 language: node_js
 node_js:
   - "14"
+cache:
+  directories:
+    - node_modules
 install: npm install
+script:
+  - npm run build
 after_script:
-  - cd ./public
+  - cd ./dist
   - git init
   - git config user.name "been"
-  - git config user.email "1043609130@qq.com"
-  - git add -A
+  - git config user.email "bean1730137@gmail.com"
+  - git add .
   - git commit -m "updated"
   - git push --force "https://{GH_TOKEN}@git@${GH_REF}" "main:gh_pages"
