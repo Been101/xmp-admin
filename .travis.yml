@@ -7,11 +7,10 @@ cache:
 install: npm install
 script:
   - npm run build
-after_script:
-  - cd ./dist
-  - git init
-  - git config user.name "been"
-  - git config user.email "bean1730137@gmail.com"
-  - git add .
-  - git commit -m "updated"
-  - git push --force "https://${GH_TOKEN}@${GH_REF}" "main:gh_pages"
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/
+  on:
+    branch: main
